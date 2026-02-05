@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    optimizePackageImports: ["convex", "@convex-dev/auth"],
+  },
 };
 
 export default nextConfig;

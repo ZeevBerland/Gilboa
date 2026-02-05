@@ -39,6 +39,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="he" dir="rtl" suppressHydrationWarning>
+      <head>
+        {/* Preconnect to critical third-party origins to reduce LCP latency */}
+        <link rel="preconnect" href="https://img.youtube.com" />
+        <link rel="dns-prefetch" href="https://img.youtube.com" />
+        <link
+          rel="preconnect"
+          href={process.env.NEXT_PUBLIC_CONVEX_URL ?? ""}
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="dns-prefetch"
+          href={process.env.NEXT_PUBLIC_CONVEX_URL ?? ""}
+        />
+      </head>
       <body
         className={`${heebo.variable} ${varelaRound.variable} font-body antialiased min-h-screen flex flex-col`}
       >

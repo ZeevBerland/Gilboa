@@ -25,5 +25,11 @@
   "devDependencies": {
     "dotenv": "^17.2.3",
     "tsx": "^4.21.0"
-  }
+  },
+  "browserslist": [
+    "chrome >= 93",
+    "edge >= 93",
+    "firefox >= 92",
+    "safari >= 15.4"
+  ]
 }
