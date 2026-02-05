@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+  --color-crimson: #C4354A;
+  --color-crimson-light: #E85D6F;
+  --color-crimson-dark: #9B2A3B;
+  --color-warm-white: #F7F7F5;
+  --color-warm-gray: #EDECE8;
+  --color-ink: #1A1A1A;
+  --color-body: #333333;
+  --color-muted: #888888;
+
+  --font-heading: "Heebo", sans-serif;
+  --font-body: "Varela Round", sans-serif;
+}
+
+/* Global resets */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-body);
+  background-color: #ffffff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-ink);
+}
+
+/* Improve touch targets */
+button, a, input, textarea, select {
+  touch-action: manipulation;
+}
+
+/* Subtle plate/utensil pattern for hero sections */
+.hero-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23e5e5e0' stroke-width='0.8'%3E%3Ccircle cx='40' cy='40' r='14'/%3E%3Cline x1='40' y1='10' x2='40' y2='26'/%3E%3Cline x1='30' y1='58' x2='30' y2='72'/%3E%3Cline x1='50' y1='58' x2='50' y2='72'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* RTL support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="ltr"] {
+  text-align: left;
+}
+
+/* Mobile safe area for notched phones */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Smoother scrolling containers on iOS */
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Horizontal chip scroller with snap */
+.chip-scroll {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px; /* prevent clip on focus ring */
+}
+.chip-scroll::-webkit-scrollbar {
+  display: none;
+}
+.chip-scroll > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Card lift hover effect */
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Custom range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--color-warm-gray);
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-crimson);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-crimson);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 3px;
+}
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--color-warm-gray);
+}
