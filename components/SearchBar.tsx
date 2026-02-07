@@ -123,7 +123,7 @@ export function SearchBar({
         value={value}
         onChange={handleChange}
         placeholder={placeholder}
-        className="w-full ps-11 pe-10 py-3 rounded-full border border-warm-gray bg-white text-body placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-crimson/30 focus:border-crimson/40 transition-all text-sm"
+        className="w-full ps-11 pe-10 py-3 rounded-full border border-warm-gray bg-white text-body placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-crimson/30 focus:border-crimson/40 transition-all text-base sm:text-sm"
         dir="auto"
       />
 
