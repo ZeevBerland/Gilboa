@@ -49,14 +49,14 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="hero-pattern py-8 sm:py-12 md:py-16 text-center relative">
         <div className="max-w-4xl mx-auto px-4">
-          {/* Logo */}
-          <div className="mb-3 sm:mb-4 flex justify-center">
+          {/* Hero image */}
+          <div className="mb-4 sm:mb-5 flex justify-center">
             <Image
-              src="/logo.jpeg"
+              src="/hero.png"
               alt="מדד גלבוע"
-              width={80}
-              height={80}
-              className="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20"
+              width={480}
+              height={240}
+              className="w-64 sm:w-80 md:w-96 h-auto"
               priority
             />
           </div>
